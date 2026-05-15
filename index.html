@@ -896,34 +896,53 @@
 </style>
 
 <!-- ══ MENTORIA ══ -->
-<section id="mentoria" class="sec dk" style="background:linear-gradient(160deg,#001020 0%,#00244A 100%);">
-  <div class="dots-bg" style="opacity:.4;"></div>
-  <div class="blob blob-tl" style="opacity:.6;"></div>
+<section id="mentoria" class="sec lt2">
+  <div class="grid-lines"></div>
+  <div class="blob blob-tl"></div>
+  <div class="blob blob-br"></div>
   <div class="content" style="max-width:1040px;">
     <div class="label reveal">07 · Mentoria de Transferência</div>
     <h2 class="reveal d1">Grade Oficial: <span class="gold">10 Encontros Estratégicos</span></h2>
 
     <!-- Tab selector -->
-    <div class="et-tabs reveal d2" id="mtTabs" style="margin-top:28px;">
-      <button class="et-tab active" data-mtab="0">
+    <div class="et-tabs mt-tabs reveal d2" id="mtTabs" style="margin-top:28px;">
+      <button class="et-tab mt-tab active" data-mtab="0">
         <span class="et-tab-num">01</span>
         <i class="ph ph-foundation"></i>
         <span class="et-tab-name">O Alicerce e o Claude App</span>
       </button>
-      <button class="et-tab" data-mtab="1">
+      <button class="et-tab mt-tab" data-mtab="1">
         <span class="et-tab-num">02</span>
         <i class="ph ph-code-block"></i>
         <span class="et-tab-name">Skills e Produtos</span>
       </button>
-      <button class="et-tab" data-mtab="2">
+      <button class="et-tab mt-tab" data-mtab="2">
         <span class="et-tab-num">03</span>
         <i class="ph ph-briefcase"></i>
         <span class="et-tab-name">Empacotamento e Negócios</span>
       </button>
     </div>
+    <style>
+      .mt-tabs { background: rgba(0,36,74,.06); border-color: rgba(0,36,74,.10); }
+      .mt-tab { color: rgba(0,36,74,.40); }
+      .mt-tab:hover { background: rgba(0,36,74,.08); color: rgba(0,36,74,.70); }
+      .mt-tab.active { background: rgba(196,154,27,.14); color: var(--gold); box-shadow: 0 0 0 1px rgba(196,154,27,.25); }
+      .mt-tab .et-tab-num { color: rgba(0,36,74,.25); }
+      .mt-tab.active .et-tab-num { color: rgba(196,154,27,.6); }
+
+      .mt-panels .et-panel-left { background: rgba(196,154,27,.10); border-right-color: rgba(0,36,74,.08); }
+      .mt-panels .et-panel { background: #fff; border-color: rgba(0,36,74,.09); }
+      .mt-panels .et-panel-title { color: var(--navy); }
+      .mt-panels .et-panel-desc { color: rgba(0,36,74,.55); }
+      .mt-panels .et-big-icon { color: var(--gold); }
+      .mt-panels .et-big-num { color: rgba(0,36,74,.08); }
+      .mt-panels .et-item { border-bottom-color: rgba(0,36,74,.07); }
+      .mt-panels .et-item-title { color: var(--navy); }
+      .mt-panels .et-item-sub { color: rgba(0,36,74,.52); }
+    </style>
 
     <!-- Panels -->
-    <div class="et-panels reveal d3" id="mtPanels">
+    <div class="et-panels mt-panels reveal d3" id="mtPanels">
 
       <!-- Módulo 1 -->
       <div class="et-panel active" data-mpanel="0">

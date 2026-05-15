@@ -697,92 +697,118 @@
 </section>
 
 <!-- ══ ENTREGÁVEIS ══ -->
-<section id="entregaveis" class="sec lt2">
-  <div class="grid-lines"></div>
-  <div class="blob blob-tl"></div>
-  <div class="content">
+<section id="entregaveis" class="sec dk" style="background:linear-gradient(160deg,#001020 0%,#00244A 100%);">
+  <div class="dots-bg" style="opacity:.4;"></div>
+  <div class="blob blob-br" style="opacity:.6;"></div>
+  <div class="content" style="max-width:1040px;">
     <div class="label reveal">06 · Entregáveis</div>
     <h2 class="reveal d1">O Que Você <span class="gold">Recebe em Cada Pilar</span></h2>
     <div class="div reveal d2"></div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px;">
 
-      <div class="entrega-card reveal d1">
-        <div class="entrega-head">
-          <div class="entrega-head-top">
-            <span class="entrega-num">01</span>
-            <div class="icon-box icon-box-sm"><i class="ph ph-megaphone"></i></div>
-          </div>
-          <div class="entrega-title">Setup de Autoridade</div>
+    <!-- Tab selector -->
+    <div class="et-tabs reveal d2" id="etTabs">
+      <button class="et-tab active" data-tab="0">
+        <span class="et-tab-num">01</span>
+        <i class="ph ph-megaphone"></i>
+        <span class="et-tab-name">Setup de Autoridade</span>
+      </button>
+      <button class="et-tab" data-tab="1">
+        <span class="et-tab-num">02</span>
+        <i class="ph ph-package"></i>
+        <span class="et-tab-name">Formatação da Oferta</span>
+      </button>
+      <button class="et-tab" data-tab="2">
+        <span class="et-tab-num">03</span>
+        <i class="ph ph-database"></i>
+        <span class="et-tab-name">Infraestrutura Nexus</span>
+      </button>
+      <button class="et-tab" data-tab="3">
+        <span class="et-tab-num">04</span>
+        <i class="ph ph-brain"></i>
+        <span class="et-tab-name">Mentoria de Transferência</span>
+      </button>
+      <button class="et-tab" data-tab="4">
+        <span class="et-tab-num">05</span>
+        <i class="ph ph-check-circle"></i>
+        <span class="et-tab-name">Validação e Execução</span>
+      </button>
+    </div>
+
+    <!-- Content panels -->
+    <div class="et-panels reveal d3" id="etPanels">
+
+      <div class="et-panel active" data-panel="0">
+        <div class="et-panel-left">
+          <div class="et-big-icon"><i class="ph ph-megaphone"></i></div>
+          <div class="et-big-num">01</div>
+          <h3 class="et-panel-title">Setup de Autoridade</h3>
+          <p class="et-panel-desc">Posicionamento e marketing pessoal. Você como produto e referência de mercado no nicho político.</p>
         </div>
-        <div class="entrega-body">
-          <div class="entrega-item"><i class="ph ph-check"></i>Consultoria de posicionamento</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Bio e narrativa profissional</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Estratégia de conteúdo editorial</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Script de autoridade para vendas</div>
+        <div class="et-panel-right">
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-compass"></i></div><div><div class="et-item-title">Consultoria de Posicionamento</div><div class="et-item-sub">Definição clara de onde você está e para onde vai no mercado</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-pen-nib"></i></div><div><div class="et-item-title">Bio e Narrativa Profissional</div><div class="et-item-sub">Texto de apresentação que converte autoridade em credibilidade</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-calendar-blank"></i></div><div><div class="et-item-title">Estratégia de Conteúdo Editorial</div><div class="et-item-sub">Calendário e linha editorial para construir audiência no nicho</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-microphone-stage"></i></div><div><div class="et-item-title">Script de Autoridade para Vendas</div><div class="et-item-sub">Roteiro de apresentação para fechar políticos em reunião</div></div></div>
         </div>
       </div>
 
-      <div class="entrega-card reveal d2">
-        <div class="entrega-head">
-          <div class="entrega-head-top">
-            <span class="entrega-num">02</span>
-            <div class="icon-box icon-box-sm"><i class="ph ph-package"></i></div>
-          </div>
-          <div class="entrega-title">Formatação da Oferta</div>
+      <div class="et-panel" data-panel="1">
+        <div class="et-panel-left">
+          <div class="et-big-icon"><i class="ph ph-package"></i></div>
+          <div class="et-big-num">02</div>
+          <h3 class="et-panel-title">Formatação da Oferta</h3>
+          <p class="et-panel-desc">Definição do alvo exato e estruturação técnica da solução de IA que será vendida aos políticos.</p>
         </div>
-        <div class="entrega-body">
-          <div class="entrega-item"><i class="ph ph-check"></i>Definição do cliente ideal</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Produto de IA estruturado</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Deck de vendas pronto</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Script de fechamento</div>
-        </div>
-      </div>
-
-      <div class="entrega-card reveal d3">
-        <div class="entrega-head">
-          <div class="entrega-head-top">
-            <span class="entrega-num">03</span>
-            <div class="icon-box icon-box-sm"><i class="ph ph-database"></i></div>
-          </div>
-          <div class="entrega-title">Infraestrutura Nexus</div>
-        </div>
-        <div class="entrega-body">
-          <div class="entrega-item"><i class="ph ph-check"></i>CRM 100% configurado</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Funil automático de vendas</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Pipeline com etapas definidas</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Onboarding digital do cliente</div>
+        <div class="et-panel-right">
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-crosshair"></i></div><div><div class="et-item-title">Definição do Cliente Ideal</div><div class="et-item-sub">ICP detalhado: cargo, perfil, dor principal, capacidade de pagamento</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-robot"></i></div><div><div class="et-item-title">Produto de IA Estruturado</div><div class="et-item-sub">Escopo técnico e entregáveis claros da solução para políticos</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-presentation-chart"></i></div><div><div class="et-item-title">Deck de Vendas Pronto</div><div class="et-item-sub">Apresentação profissional para usar em reuniões comerciais</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-handshake"></i></div><div><div class="et-item-title">Script de Fechamento</div><div class="et-item-sub">Argumentos e respostas a objeções para fechar a venda</div></div></div>
         </div>
       </div>
 
-      <div class="entrega-card reveal d4">
-        <div class="entrega-head">
-          <div class="entrega-head-top">
-            <span class="entrega-num">04</span>
-            <div class="icon-box icon-box-sm"><i class="ph ph-brain"></i></div>
-          </div>
-          <div class="entrega-title">Mentoria de Transferência</div>
+      <div class="et-panel" data-panel="2">
+        <div class="et-panel-left">
+          <div class="et-big-icon"><i class="ph ph-database"></i></div>
+          <div class="et-big-num">03</div>
+          <h3 class="et-panel-title">Infraestrutura Nexus</h3>
+          <p class="et-panel-desc">Implementação completa do CRM para automatizar o funil e dominar a jornada de compra dos seus clientes.</p>
         </div>
-        <div class="entrega-body">
-          <div class="entrega-item"><i class="ph ph-check"></i>10 encontros de 2h ao vivo</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Hands-on em Claude e Code</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Material de capacitação</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Suporte assíncrono contínuo</div>
+        <div class="et-panel-right">
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-sliders"></i></div><div><div class="et-item-title">CRM 100% Configurado</div><div class="et-item-sub">Nexus 2.0 totalmente instalado, customizado e operacional</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-flow-arrow"></i></div><div><div class="et-item-title">Funil Automático de Vendas</div><div class="et-item-sub">Sequências de nurturing e follow-up rodando sem intervenção</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-kanban"></i></div><div><div class="et-item-title">Pipeline com Etapas Definidas</div><div class="et-item-sub">Cada lead no lugar certo com critérios claros de avanço</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-door-open"></i></div><div><div class="et-item-title">Onboarding Digital do Cliente</div><div class="et-item-sub">Jornada automática de boas-vindas para o novo político contratante</div></div></div>
         </div>
       </div>
 
-      <div class="entrega-card reveal d5">
-        <div class="entrega-head">
-          <div class="entrega-head-top">
-            <span class="entrega-num">05</span>
-            <div class="icon-box icon-box-sm"><i class="ph ph-check-circle"></i></div>
-          </div>
-          <div class="entrega-title">Validação e Execução</div>
+      <div class="et-panel" data-panel="3">
+        <div class="et-panel-left">
+          <div class="et-big-icon"><i class="ph ph-brain"></i></div>
+          <div class="et-big-num">04</div>
+          <h3 class="et-panel-title">Mentoria de Transferência</h3>
+          <p class="et-panel-desc">Capacitação intensa via Claude e Code para total autonomia na entrega técnica. Zero dependência.</p>
         </div>
-        <div class="entrega-body">
-          <div class="entrega-item"><i class="ph ph-check"></i>Acompanhamento da 1ª venda</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Gestão da primeira entrega</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Análise pós-imersão</div>
-          <div class="entrega-item"><i class="ph ph-check"></i>Ajuste fino do produto</div>
+        <div class="et-panel-right">
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-video-camera"></i></div><div><div class="et-item-title">10 Encontros de 2h ao Vivo</div><div class="et-item-sub">Sessões online gravadas, progressivas e com exercícios práticos</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-terminal-window"></i></div><div><div class="et-item-title">Hands-on em Claude e Code</div><div class="et-item-sub">Você opera o terminal, cria as ferramentas e entrega os resultados</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-books"></i></div><div><div class="et-item-title">Material de Capacitação</div><div class="et-item-sub">Documentação, templates e playbooks para usar após a mentoria</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-chat-dots"></i></div><div><div class="et-item-title">Suporte Assíncrono Contínuo</div><div class="et-item-sub">Canal direto para dúvidas e revisões durante todo o período</div></div></div>
+        </div>
+      </div>
+
+      <div class="et-panel" data-panel="4">
+        <div class="et-panel-left">
+          <div class="et-big-icon"><i class="ph ph-check-circle"></i></div>
+          <div class="et-big-num">05</div>
+          <h3 class="et-panel-title">Validação e Execução</h3>
+          <p class="et-panel-desc">Acompanhamento real da primeira venda e entrega. Garantia de que o resultado acontece de verdade.</p>
+        </div>
+        <div class="et-panel-right">
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-flag-banner"></i></div><div><div class="et-item-title">Acompanhamento da 1ª Venda</div><div class="et-item-sub">Presença estratégica na reunião de fechamento do primeiro cliente</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-gear"></i></div><div><div class="et-item-title">Gestão da Primeira Entrega</div><div class="et-item-sub">Supervisão operacional da imersão inicial para garantir qualidade</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-chart-bar"></i></div><div><div class="et-item-title">Análise Pós-Imersão</div><div class="et-item-sub">Relatório com aprendizados, pontos fortes e oportunidades de melhoria</div></div></div>
+          <div class="et-item"><div class="et-item-icon"><i class="ph ph-wrench"></i></div><div><div class="et-item-title">Ajuste Fino do Produto</div><div class="et-item-sub">Refinamento da oferta com base nos dados reais do primeiro cliente</div></div></div>
         </div>
       </div>
 
@@ -790,95 +816,305 @@
   </div>
 </section>
 
-<!-- ══ MENTORIA (Módulos 1 + 2 + 3) ══ -->
-<section id="mentoria" class="sec dk3">
+<style>
+/* ── ENTREGÁVEIS TABS ── */
+.et-tabs {
+  display: flex; gap: 0; margin-top: 28px;
+  background: rgba(255,253,243,.04); border: 1px solid rgba(255,253,243,.08);
+  border-radius: 14px; padding: 6px; overflow-x: auto;
+}
+.et-tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 14px 12px; border: none; background: transparent; cursor: pointer;
+  border-radius: 10px; transition: background .25s, color .25s;
+  color: rgba(255,253,243,.35); min-width: 0;
+}
+.et-tab i { font-size: 20px; transition: color .25s; }
+.et-tab-num { font-family: 'Sora', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2px; color: rgba(255,253,243,.22); }
+.et-tab-name { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 600; text-align: center; line-height: 1.3; color: inherit; }
+.et-tab:hover { background: rgba(255,253,243,.06); color: rgba(255,253,243,.65); }
+.et-tab.active {
+  background: rgba(196,154,27,.14); color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(196,154,27,.25);
+}
+.et-tab.active .et-tab-num { color: rgba(196,154,27,.6); }
+
+/* ── PANELS ── */
+.et-panels { margin-top: 16px; position: relative; min-height: 260px; }
+.et-panel {
+  display: none; grid-template-columns: 300px 1fr; gap: 0;
+  background: rgba(255,253,243,.04); border: 1px solid rgba(255,253,243,.09);
+  border-radius: 16px; overflow: hidden;
+  animation: panelIn .35s ease both;
+}
+.et-panel.active { display: grid; }
+@keyframes panelIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+.et-panel-left {
+  background: rgba(196,154,27,.09); border-right: 1px solid rgba(255,253,243,.07);
+  padding: 40px 32px; display: flex; flex-direction: column; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.et-panel-left::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 0% 0%, rgba(196,154,27,.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.et-big-icon {
+  font-size: 42px; color: var(--gold); margin-bottom: 16px; opacity: .8;
+  position: relative; z-index: 1;
+}
+.et-big-num {
+  font-family: 'Sora', sans-serif; font-size: 72px; font-weight: 800;
+  color: rgba(196,154,27,.12); line-height: 1; position: absolute;
+  bottom: 20px; right: 20px; pointer-events: none; user-select: none;
+}
+.et-panel-title {
+  font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700;
+  color: var(--cream); margin-bottom: 12px; line-height: 1.25; position: relative; z-index: 1;
+}
+.et-panel-desc { font-size: 13.5px; color: rgba(255,253,243,.55); line-height: 1.7; position: relative; z-index: 1; }
+
+.et-panel-right { padding: 32px 36px; display: flex; flex-direction: column; gap: 0; justify-content: center; }
+.et-item {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 18px 0; border-bottom: 1px solid rgba(255,253,243,.06);
+  transition: background .2s; border-radius: 6px;
+}
+.et-item:last-child { border-bottom: none; }
+.et-item-icon {
+  width: 38px; height: 38px; flex-shrink: 0; border-radius: 9px;
+  background: rgba(196,154,27,.10); border: 1px solid rgba(196,154,27,.18);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: 18px; margin-top: 1px;
+}
+.et-item-title { font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+.et-item-sub { font-size: 12.5px; color: rgba(255,253,243,.48); line-height: 1.55; }
+
+@media (max-width: 900px) {
+  .et-tabs { gap: 4px; }
+  .et-tab-name { display: none; }
+  .et-panel.active { grid-template-columns: 1fr; }
+  .et-panel-left { padding: 28px 24px; border-right: none; border-bottom: 1px solid rgba(255,253,243,.07); }
+  .et-big-num { font-size: 48px; }
+  .et-panel-right { padding: 24px; }
+}
+</style>
+
+<!-- ══ MENTORIA ══ -->
+<section id="mentoria" class="sec lt2">
+  <div class="grid-lines"></div>
   <div class="blob blob-tl"></div>
   <div class="blob blob-br"></div>
-  <div class="content">
+  <div class="content" style="max-width:1040px;">
     <div class="label reveal">07 · Mentoria de Transferência</div>
     <h2 class="reveal d1">Grade Oficial: <span class="gold">10 Encontros Estratégicos</span></h2>
     <div class="div reveal d2"></div>
+    <p class="reveal d2" style="font-size:14px;color:rgba(0,36,74,.55);line-height:1.65;margin-bottom:32px;">Do básico bem feito até a criação de soluções autônomas em IA. Três fases progressivas, dez sessões práticas.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
-      <div class="modulo-card reveal d2">
-        <div class="modulo-head">
-          <div class="modulo-num">01</div>
-          <div>
-            <div class="modulo-label">Módulo</div>
-            <div class="modulo-name">O Alicerce e o Claude App</div>
+    <!-- Roadmap dos 3 módulos -->
+    <div class="mt-roadmap reveal d2">
+
+      <!-- Módulo 1 -->
+      <div class="mt-module">
+        <div class="mt-mod-header" style="--accent:rgba(196,154,27,.18);">
+          <div class="mt-mod-badge">
+            <span class="mt-mod-num">01</span>
+            <span class="mt-mod-tag">Módulo</span>
+          </div>
+          <div class="mt-mod-icon"><i class="ph ph-foundation"></i></div>
+          <div class="mt-mod-info">
+            <div class="mt-mod-title">O Alicerce e o Claude App</div>
+            <div class="mt-mod-sub">Do básico bem feito até o domínio do aplicativo web</div>
           </div>
         </div>
-        <div class="modulo-body">
-          <div class="encontro">
-            <div class="encontro-head"><div class="icon-box icon-box-sm" style="width:28px;height:28px;font-size:13px;border-radius:6px;"><i class="ph ph-brain"></i></div><div class="encontro-title">E1 · Fundamentos da IA e Bê-á-Bá dos Modelos</div></div>
-            <div class="encontro-desc">O que são LLMs, como pensam, diferença entre modelos do mercado e o essencial da engenharia de prompts.</div>
+        <div class="mt-sessions">
+          <div class="mt-session">
+            <div class="mt-session-num">E1</div>
+            <div class="mt-session-icon"><i class="ph ph-brain"></i></div>
+            <div>
+              <div class="mt-session-title">Fundamentos da IA e Bê-á-Bá dos Modelos</div>
+              <div class="mt-session-desc">O que são LLMs, como pensam, diferença entre modelos do mercado e o essencial da engenharia de prompts.</div>
+            </div>
           </div>
-          <div class="encontro">
-            <div class="encontro-head"><div class="icon-box icon-box-sm" style="width:28px;height:28px;font-size:13px;border-radius:6px;"><i class="ph ph-robot"></i></div><div class="encontro-title">E2 · Dominando o Claude</div></div>
-            <div class="encontro-desc">Uso profundo da ferramenta web: Projetos, Artefatos, criação de contexto e o modelo de "Coworking" com a IA.</div>
+          <div class="mt-session">
+            <div class="mt-session-num">E2</div>
+            <div class="mt-session-icon"><i class="ph ph-robot"></i></div>
+            <div>
+              <div class="mt-session-title">Dominando o Claude</div>
+              <div class="mt-session-desc">Uso profundo da ferramenta web: Projetos, Artefatos, criação de contexto e o modelo de Coworking com a IA.</div>
+            </div>
           </div>
-          <div class="encontro">
-            <div class="encontro-head"><div class="icon-box icon-box-sm" style="width:28px;height:28px;font-size:13px;border-radius:6px;"><i class="ph ph-terminal-window"></i></div><div class="encontro-title">E3 · Setup Avançado — O Poder do Terminal</div></div>
-            <div class="encontro-desc">Instalação do Claude Code CLI, introdução ao ecossistema MCP e configurações do ambiente local.</div>
+          <div class="mt-session">
+            <div class="mt-session-num">E3</div>
+            <div class="mt-session-icon"><i class="ph ph-terminal-window"></i></div>
+            <div>
+              <div class="mt-session-title">Setup Avançado — O Poder do Terminal</div>
+              <div class="mt-session-desc">Instalação do Claude Code CLI, introdução ao ecossistema MCP e configurações do ambiente local.</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="modulo-card reveal d3">
-        <div class="modulo-head">
-          <div class="modulo-num">02</div>
-          <div>
-            <div class="modulo-label">Módulo</div>
-            <div class="modulo-name">Construção de Skills e Produtos</div>
-          </div>
-        </div>
-        <div class="modulo-body">
-          <div class="encontro">
-            <div class="encontro-head"><div class="icon-box icon-box-sm" style="width:28px;height:28px;font-size:13px;border-radius:6px;"><i class="ph ph-sparkle"></i></div><div class="encontro-title">E4 · Criando Skills na Prática</div></div>
-            <div class="encontro-desc">Como formatar habilidades e personas customizadas para o uso pessoal e para as dores do mercado político.</div>
-          </div>
-          <div class="encontro">
-            <div class="encontro-head"><div class="icon-box icon-box-sm" style="width:28px;height:28px;font-size:13px;border-radius:6px;"><i class="ph ph-rocket-launch"></i></div><div class="encontro-title">E5 · Projeto Prático: Do Zero ao Deploy</div></div>
-            <div class="encontro-desc">Criação de uma Landing Page real utilizando Claude Code e Supabase. Uma Skill focada em criação e deploy rápido.</div>
-          </div>
-          <div class="encontro">
-            <div class="encontro-head"><div class="icon-box icon-box-sm" style="width:28px;height:28px;font-size:13px;border-radius:6px;"><i class="ph ph-flow-arrow"></i></div><div class="encontro-title">E6 · Evolução de Skills para Agentes</div></div>
-            <div class="encontro-desc">Como automatizar fluxos complexos usando o Claude no terminal, indo além do formato prompt-resposta.</div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <!-- conector -->
+      <div class="mt-connector"><i class="ph ph-arrow-right"></i></div>
 
-    <!-- Módulo 3 -->
-    <div style="margin-top:28px;" class="reveal d3">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:18px;">
-        <div style="font-family:'Sora',sans-serif;font-size:24px;font-weight:800;color:var(--gold);">03</div>
-        <div>
-          <div style="font-family:'Sora',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;color:rgba(255,253,243,.40);margin-bottom:2px;">MÓDULO</div>
-          <div style="font-family:'Sora',sans-serif;font-size:15px;font-weight:700;color:var(--cream);">Empacotamento e Negócios</div>
+      <!-- Módulo 2 -->
+      <div class="mt-module">
+        <div class="mt-mod-header" style="--accent:rgba(0,36,74,.10);">
+          <div class="mt-mod-badge">
+            <span class="mt-mod-num">02</span>
+            <span class="mt-mod-tag">Módulo</span>
+          </div>
+          <div class="mt-mod-icon"><i class="ph ph-code-block"></i></div>
+          <div class="mt-mod-info">
+            <div class="mt-mod-title">Construção de Skills e Produtos</div>
+            <div class="mt-mod-sub">Saindo do chat e indo para o terminal</div>
+          </div>
+        </div>
+        <div class="mt-sessions">
+          <div class="mt-session">
+            <div class="mt-session-num">E4</div>
+            <div class="mt-session-icon"><i class="ph ph-sparkle"></i></div>
+            <div>
+              <div class="mt-session-title">Criando Skills na Prática</div>
+              <div class="mt-session-desc">Como formatar habilidades e personas customizadas para uso pessoal e para as dores do mercado político.</div>
+            </div>
+          </div>
+          <div class="mt-session">
+            <div class="mt-session-num">E5</div>
+            <div class="mt-session-icon"><i class="ph ph-rocket-launch"></i></div>
+            <div>
+              <div class="mt-session-title">Projeto Prático: Do Zero ao Deploy</div>
+              <div class="mt-session-desc">Criação de uma Landing Page real utilizando Claude Code e Supabase. Deploy rápido de projetos reais.</div>
+            </div>
+          </div>
+          <div class="mt-session">
+            <div class="mt-session-num">E6</div>
+            <div class="mt-session-icon"><i class="ph ph-flow-arrow"></i></div>
+            <div>
+              <div class="mt-session-title">Evolução de Skills para Agentes</div>
+              <div class="mt-session-desc">Como automatizar fluxos complexos usando o Claude no terminal, indo além do formato prompt-resposta.</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
-        <div class="m3-row">
-          <div class="m3-left"><i class="ph ph-users" style="font-size:15px;"></i> E7 · IA para Políticos</div>
-          <div class="m3-right">Aplicação das Skills em casos reais: análise de eleitorado, redação de discursos hiper-segmentados e gestão de crises.</div>
+
+      <!-- conector -->
+      <div class="mt-connector"><i class="ph ph-arrow-right"></i></div>
+
+      <!-- Módulo 3 -->
+      <div class="mt-module">
+        <div class="mt-mod-header" style="--accent:rgba(196,154,27,.18);">
+          <div class="mt-mod-badge">
+            <span class="mt-mod-num">03</span>
+            <span class="mt-mod-tag">Módulo</span>
+          </div>
+          <div class="mt-mod-icon"><i class="ph ph-briefcase"></i></div>
+          <div class="mt-mod-info">
+            <div class="mt-mod-title">Empacotamento e Negócios</div>
+            <div class="mt-mod-sub">Transformando conhecimento técnico em produto rentável</div>
+          </div>
         </div>
-        <div class="m3-row">
-          <div class="m3-left"><i class="ph ph-package" style="font-size:15px;"></i> E8 · Estruturação do Produto</div>
-          <div class="m3-right">Como empacotar o conhecimento técnico em uma Imersão Presencial e Mentoria que o político compre e pague bem.</div>
-        </div>
-        <div class="m3-row">
-          <div class="m3-left"><i class="ph ph-database" style="font-size:15px;"></i> E9 · Domínio do Nexus 2.0</div>
-          <div class="m3-right">A tecnologia a favor da venda. Como usar o Nexus para gerenciar leads políticos, organizar o funil e escalar vendas.</div>
-        </div>
-        <div class="m3-row highlight">
-          <div class="m3-left" style="border-right-color:rgba(196,154,27,.30);"><i class="ph ph-trophy" style="font-size:15px;"></i> E10 · Hot Seat — Prova Final</div>
-          <div class="m3-right" style="color:rgba(255,253,243,.82);">Você assume o controle: roda o Claude Code e apresenta uma oferta de venda simulando o atendimento a um político real. Validação total da didática.</div>
+        <div class="mt-sessions">
+          <div class="mt-session">
+            <div class="mt-session-num">E7</div>
+            <div class="mt-session-icon"><i class="ph ph-users"></i></div>
+            <div>
+              <div class="mt-session-title">IA para Políticos na Prática</div>
+              <div class="mt-session-desc">Aplicação das Skills em casos reais: análise de eleitorado, discursos hiper-segmentados e gestão de crises.</div>
+            </div>
+          </div>
+          <div class="mt-session">
+            <div class="mt-session-num">E8</div>
+            <div class="mt-session-icon"><i class="ph ph-package"></i></div>
+            <div>
+              <div class="mt-session-title">Estruturação do Produto</div>
+              <div class="mt-session-desc">Como empacotar o conhecimento técnico em uma Imersão Presencial que o político compre e pague bem.</div>
+            </div>
+          </div>
+          <div class="mt-session">
+            <div class="mt-session-num">E9</div>
+            <div class="mt-session-icon"><i class="ph ph-database"></i></div>
+            <div>
+              <div class="mt-session-title">Domínio do Nexus 2.0</div>
+              <div class="mt-session-desc">A tecnologia a favor da venda. Como usar o Nexus para gerenciar leads políticos e escalar vendas.</div>
+            </div>
+          </div>
+          <div class="mt-session mt-session-final">
+            <div class="mt-session-num" style="background:var(--gold);color:#fff;">E10</div>
+            <div class="mt-session-icon" style="background:rgba(196,154,27,.15);border-color:rgba(196,154,27,.35);color:var(--gold);"><i class="ph ph-trophy"></i></div>
+            <div>
+              <div class="mt-session-title" style="color:var(--gold);">Hot Seat — Prova Final</div>
+              <div class="mt-session-desc">Você assume o controle: roda o Claude Code e apresenta uma oferta simulando o atendimento a um político real.</div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
+<style>
+/* ── MENTORIA ROADMAP ── */
+.mt-roadmap {
+  display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr;
+  align-items: start; gap: 0;
+}
+.mt-connector {
+  display: flex; align-items: flex-start; justify-content: center;
+  padding-top: 36px; color: rgba(0,36,74,.25); font-size: 22px;
+}
+.mt-module {
+  border: 1px solid rgba(0,36,74,.10); border-radius: 16px; overflow: hidden;
+  background: #fff; box-shadow: 0 2px 20px rgba(0,36,74,.06);
+  transition: box-shadow .3s;
+}
+.mt-module:hover { box-shadow: 0 8px 40px rgba(0,36,74,.12); }
+
+.mt-mod-header {
+  background: var(--accent, rgba(196,154,27,.10));
+  border-bottom: 1px solid rgba(0,36,74,.08);
+  padding: 20px 22px; display: flex; align-items: center; gap: 14px;
+}
+.mt-mod-badge { display: flex; flex-direction: column; align-items: center; gap: 2px; flex-shrink: 0; }
+.mt-mod-num { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1; }
+.mt-mod-tag { font-family: 'Sora', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 1.5px; color: rgba(0,36,74,.38); text-transform: uppercase; }
+.mt-mod-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(0,36,74,.08); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--navy); flex-shrink: 0; }
+.mt-mod-title { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 4px; }
+.mt-mod-sub { font-size: 11.5px; color: rgba(0,36,74,.45); line-height: 1.4; }
+
+.mt-sessions { padding: 6px 0; }
+.mt-session {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 16px 22px; border-bottom: 1px solid rgba(0,36,74,.06);
+  transition: background .2s;
+}
+.mt-session:last-child { border-bottom: none; }
+.mt-session:hover { background: rgba(0,36,74,.03); }
+.mt-session-num {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 6px;
+  background: rgba(0,36,74,.07); display: flex; align-items: center; justify-content: center;
+  font-family: 'Sora', sans-serif; font-size: 9px; font-weight: 700;
+  color: rgba(0,36,74,.50); letter-spacing: .5px;
+}
+.mt-session-icon {
+  flex-shrink: 0; width: 32px; height: 32px; border-radius: 8px;
+  background: rgba(196,154,27,.08); border: 1px solid rgba(196,154,27,.16);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; color: var(--gold);
+}
+.mt-session-title { font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 4px; line-height: 1.3; }
+.mt-session-desc { font-size: 11.5px; color: rgba(0,36,74,.52); line-height: 1.6; }
+.mt-session-final { background: rgba(196,154,27,.05); }
+.mt-session-final:hover { background: rgba(196,154,27,.08); }
+
+@media (max-width: 900px) {
+  .mt-roadmap { grid-template-columns: 1fr; }
+  .mt-connector { display: none; }
+}
+</style>
 
 <!-- ══ BÔNUS ESPECIAL ══ -->
 <section id="bonus" class="sec lt">
@@ -1042,6 +1278,17 @@
     });
   }, { rootMargin: '-35% 0px -55% 0px' });
   sections.forEach(s => navObs.observe(s));
+
+  // ── ENTREGÁVEIS TABS ──
+  document.querySelectorAll('.et-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const idx = tab.dataset.tab;
+      document.querySelectorAll('.et-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.et-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector(`.et-panel[data-panel="${idx}"]`).classList.add('active');
+    });
+  });
 
   // ── MOUSE PARALLAX ON HERO ──
   const heroBlobs = document.querySelectorAll('#capa .blob');

@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projeto de Incubação Estratégica — LL'EXPERT</title>
 <meta name="description" content="Proposta de parceria estratégica: IA para Políticos. Construindo a base tecnológica, estratégica e comercial para dominar o nicho de gestão pública.">
 <meta property="og:title" content="Projeto de Incubação Estratégica — LL'EXPERT">
 <meta property="og:description" content="Proposta de parceria estratégica: IA para Políticos. 3 meses. Alta performance. Parceria de resultado.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://proposta.lazaroleon.com.br">
+<meta property="og:url" content="https://propostas.lazaroleon.com.br">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,285 +24,233 @@
     --gp:     rgba(196,154,27,0.14);
   }
 
-  html, body { width:100%; height:100%; overflow:hidden; background:var(--navy); font-family:'Inter',sans-serif; }
+  html { scroll-behavior: smooth; }
+  body { width: 100%; background: var(--navy); font-family: 'Inter', sans-serif; }
 
-  /* ── SLIDES ── */
-  .slide {
-    position:absolute; inset:0;
-    display:flex; flex-direction:column; justify-content:center; align-items:center;
-    padding:52px 80px;
-    opacity:0; pointer-events:none;
-    transition:opacity .42s ease, transform .42s ease;
-    transform:translateY(16px); overflow:hidden;
+  /* ── NAVBAR ── */
+  .navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 60px; height: 68px;
+    background: rgba(0, 18, 40, 0.88); backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(255,253,243,.08);
   }
-  .slide.active  { opacity:1; pointer-events:all; transform:translateY(0); }
-  .slide.exit    { opacity:0; transform:translateY(-16px); }
+  .nav-brand {
+    font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 4px; text-transform: uppercase; color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-brand span { color: rgba(255,253,243,.35); font-weight: 400; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(255,253,243,.42); text-decoration: none; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── SECTIONS ── */
+  .sec {
+    width: 100%; min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 120px 80px 80px;
+    position: relative; overflow: hidden;
+  }
+  .sec-hero { padding: 100px 80px; }
 
   /* backgrounds */
-  .dk  { background:var(--navy); color:var(--cream); }
-  .dk2 { background:linear-gradient(150deg,#001830 0%,var(--navy) 100%); color:var(--cream); }
-  .dk3 { background:linear-gradient(150deg,var(--navy) 0%,#002A58 100%); color:var(--cream); }
-  .lt  { background:var(--cream); color:var(--navy); }
-  .lt2 { background:linear-gradient(150deg,var(--cream) 0%,#F4F0DC 100%); color:var(--navy); }
+  .dk  { background: var(--navy); color: var(--cream); }
+  .dk2 { background: linear-gradient(150deg,#001830 0%,var(--navy) 100%); color: var(--cream); }
+  .dk3 { background: linear-gradient(150deg,var(--navy) 0%,#002A58 100%); color: var(--cream); }
+  .lt  { background: var(--cream); color: var(--navy); }
+  .lt2 { background: linear-gradient(150deg,var(--cream) 0%,#F4F0DC 100%); color: var(--navy); }
 
   /* decorations */
-  .blob { position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; }
-  .blob-tl { width:420px;height:420px;top:-130px;left:-130px; }
-  .blob-br { width:520px;height:520px;bottom:-160px;right:-160px; }
-  .blob-tr { width:300px;height:300px;top:-80px;right:-80px; }
-  .dk  .blob-tl,.dk2 .blob-tl,.dk3 .blob-tl { background:rgba(196,154,27,.11); }
-  .dk  .blob-br,.dk2 .blob-br,.dk3 .blob-br { background:rgba(0,63,138,.30); }
-  .dk  .blob-tr,.dk2 .blob-tr,.dk3 .blob-tr { background:rgba(196,154,27,.08); }
-  .lt  .blob-tl,.lt2 .blob-tl { background:rgba(196,154,27,.18); }
-  .lt  .blob-br,.lt2 .blob-br { background:rgba(0,36,74,.06); }
+  .blob { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; z-index: 0; }
+  .blob-tl { width: 420px; height: 420px; top: -130px; left: -130px; }
+  .blob-br { width: 520px; height: 520px; bottom: -160px; right: -160px; }
+  .blob-tr { width: 300px; height: 300px; top: -80px; right: -80px; }
+  .dk  .blob-tl, .dk2 .blob-tl, .dk3 .blob-tl { background: rgba(196,154,27,.11); }
+  .dk  .blob-br, .dk2 .blob-br, .dk3 .blob-br { background: rgba(0,63,138,.30); }
+  .dk  .blob-tr, .dk2 .blob-tr, .dk3 .blob-tr { background: rgba(196,154,27,.08); }
+  .lt  .blob-tl, .lt2 .blob-tl { background: rgba(196,154,27,.18); }
+  .lt  .blob-br, .lt2 .blob-br { background: rgba(0,36,74,.06); }
 
   .grid-lines {
-    position:absolute;inset:0;pointer-events:none;
-    background-image:linear-gradient(rgba(196,154,27,.05) 1px,transparent 1px),
-                     linear-gradient(90deg,rgba(196,154,27,.05) 1px,transparent 1px);
-    background-size:80px 80px;
+    position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background-image: linear-gradient(rgba(196,154,27,.05) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(196,154,27,.05) 1px,transparent 1px);
+    background-size: 80px 80px;
   }
-  .lt .grid-lines,.lt2 .grid-lines {
-    background-image:linear-gradient(rgba(0,36,74,.05) 1px,transparent 1px),
-                     linear-gradient(90deg,rgba(0,36,74,.05) 1px,transparent 1px);
+  .lt .grid-lines, .lt2 .grid-lines {
+    background-image: linear-gradient(rgba(0,36,74,.05) 1px,transparent 1px),
+                      linear-gradient(90deg,rgba(0,36,74,.05) 1px,transparent 1px);
   }
   .dots-bg {
-    position:absolute;inset:0;pointer-events:none;
-    background-image:radial-gradient(circle,rgba(255,253,243,.07) 1px,transparent 1px);
-    background-size:44px 44px;
+    position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background-image: radial-gradient(circle,rgba(255,253,243,.07) 1px,transparent 1px);
+    background-size: 44px 44px;
   }
 
   /* ── COMMON ── */
-  .content { width:100%; max-width:980px; position:relative; z-index:1; }
+  .content { width: 100%; max-width: 980px; position: relative; z-index: 1; }
   .label {
-    font-family:'Sora',sans-serif; font-size:11px; font-weight:700;
-    letter-spacing:3px; text-transform:uppercase; color:var(--gold);
-    margin-bottom:14px; display:block;
+    font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 14px; display: block;
   }
-  h1 { font-family:'Sora',sans-serif; font-size:clamp(34px,5vw,62px); font-weight:800; line-height:1.1; text-align:center; }
-  h2 { font-family:'Sora',sans-serif; font-size:clamp(22px,3vw,36px); font-weight:700; line-height:1.2; }
-  .gold { color:var(--gold); }
-  .subtitle { font-size:clamp(14px,1.4vw,18px); line-height:1.65; margin-top:14px; max-width:700px; text-align:center; opacity:.7; }
-  .div { width:52px;height:3px;background:var(--gold);border-radius:2px;margin:18px 0; }
-  .div-c { margin:18px auto; }
+  h1 { font-family: 'Sora', sans-serif; font-size: clamp(34px,5vw,62px); font-weight: 800; line-height: 1.1; text-align: center; }
+  h2 { font-family: 'Sora', sans-serif; font-size: clamp(22px,3vw,36px); font-weight: 700; line-height: 1.2; }
+  .gold { color: var(--gold); }
+  .subtitle { font-size: clamp(14px,1.4vw,18px); line-height: 1.65; margin-top: 14px; max-width: 700px; text-align: center; opacity: .7; }
+  .div { width: 52px; height: 3px; background: var(--gold); border-radius: 2px; margin: 18px 0; }
+  .div-c { margin: 18px auto; }
 
-  /* ── NUMBERED LIST (slides 2, 4) ── */
-  .num-list { display:flex; flex-direction:column; gap:20px; margin-top:28px; }
+  /* ── NUMBERED LIST ── */
+  .num-list { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
   .num-item {
-    display:grid; grid-template-columns:72px 1fr;
-    align-items:start; gap:0;
-    padding:22px 28px;
-    background:rgba(255,253,243,.04);
-    border:1px solid rgba(255,253,243,.09);
-    border-left:3px solid var(--gold);
-    border-radius:10px;
+    display: grid; grid-template-columns: 72px 1fr;
+    align-items: start; gap: 0;
+    padding: 22px 28px;
+    background: rgba(255,253,243,.04);
+    border: 1px solid rgba(255,253,243,.09);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
   }
   .n-num {
-    font-family:'Sora',sans-serif; font-size:36px; font-weight:800;
-    color:var(--gold); line-height:1; padding-top:2px;
+    font-family: 'Sora', sans-serif; font-size: 36px; font-weight: 800;
+    color: var(--gold); line-height: 1; padding-top: 2px;
   }
   .n-body strong {
-    font-family:'Sora',sans-serif; font-size:17px; font-weight:700;
-    color:var(--cream); display:block; margin-bottom:6px;
+    font-family: 'Sora', sans-serif; font-size: 17px; font-weight: 700;
+    color: var(--cream); display: block; margin-bottom: 6px;
   }
-  .n-body span { font-size:14px; color:rgba(255,253,243,.62); line-height:1.55; }
+  .n-body span { font-size: 14px; color: rgba(255,253,243,.62); line-height: 1.55; }
 
-  /* ── ROW LIST (slide 3 diagnóstico) ── */
-  .row-list { display:flex; flex-direction:column; gap:14px; margin-top:28px; }
+  /* ── ROW LIST ── */
+  .row-list { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
   .row-item {
-    display:grid; grid-template-columns:160px 220px 1fr;
-    align-items:center; gap:24px;
-    padding:18px 24px;
-    background:#fff;
-    border:1px solid rgba(0,36,74,.08);
-    border-left:3px solid var(--gold);
-    border-radius:10px;
+    display: grid; grid-template-columns: 160px 220px 1fr;
+    align-items: center; gap: 24px;
+    padding: 18px 24px;
+    background: #fff;
+    border: 1px solid rgba(0,36,74,.08);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
   }
-  .row-item.danger { border-left-color:#C0392B; }
+  .row-item.danger { border-left-color: #C0392B; }
   .row-tag {
-    font-family:'Sora',sans-serif; font-size:10px; font-weight:700;
-    letter-spacing:2.5px; text-transform:uppercase; color:var(--gold);
+    font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold);
   }
-  .row-item.danger .row-tag { color:#C0392B; }
+  .row-item.danger .row-tag { color: #C0392B; }
   .row-title {
-    font-family:'Sora',sans-serif; font-size:15px; font-weight:700;
-    color:var(--navy);
+    font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 700;
+    color: var(--navy);
   }
-  .row-desc { font-size:13.5px; color:rgba(0,36,74,.60); line-height:1.55; }
+  .row-desc { font-size: 13.5px; color: rgba(0,36,74,.60); line-height: 1.55; }
 
-  /* ── PARADOX LAYOUT (slide 5) ── */
+  /* ── PARADOX LAYOUT ── */
   .paradox-wrap {
-    display:grid; grid-template-columns:1fr 1.7fr;
-    gap:20px; margin-top:28px; height:calc(100vh - 260px); max-height:420px;
+    display: grid; grid-template-columns: 1fr 1.7fr;
+    gap: 20px; margin-top: 28px;
   }
-  .paradox-left { display:flex; flex-direction:column; gap:14px; }
+  .paradox-left { display: flex; flex-direction: column; gap: 14px; }
   .p-sm {
-    flex:1;
-    background:rgba(255,253,243,.04);
-    border:1px solid rgba(255,253,243,.09);
-    border-radius:12px; padding:24px;
+    flex: 1;
+    background: rgba(255,253,243,.04);
+    border: 1px solid rgba(255,253,243,.09);
+    border-radius: 12px; padding: 28px;
   }
   .p-sm .c-tag {
-    font-family:'Sora',sans-serif; font-size:10px; font-weight:700;
-    letter-spacing:2px; text-transform:uppercase; color:rgba(255,253,243,.40);
-    margin-bottom:10px;
+    font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: rgba(255,253,243,.40);
+    margin-bottom: 10px;
   }
-  .p-sm h3 { font-family:'Sora',sans-serif; font-size:16px; font-weight:700; color:var(--cream); margin-bottom:10px; }
-  .p-sm p  { font-size:13px; color:rgba(255,253,243,.55); line-height:1.6; }
+  .p-sm h3 { font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 700; color: var(--cream); margin-bottom: 10px; }
+  .p-sm p  { font-size: 13px; color: rgba(255,253,243,.55); line-height: 1.6; }
 
   .p-big {
-    background:rgba(196,154,27,.12);
-    border:2px solid var(--gold);
-    border-radius:14px; padding:36px;
-    display:flex; flex-direction:column; justify-content:center;
+    background: rgba(196,154,27,.12);
+    border: 2px solid var(--gold);
+    border-radius: 14px; padding: 40px;
+    display: flex; flex-direction: column; justify-content: center;
   }
   .p-big .c-tag {
-    font-family:'Sora',sans-serif; font-size:11px; font-weight:700;
-    letter-spacing:2.5px; text-transform:uppercase; color:var(--gold);
-    margin-bottom:14px;
+    font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 14px;
   }
   .p-big h3 {
-    font-family:'Sora',sans-serif; font-size:28px; font-weight:800;
-    color:var(--cream); margin-bottom:16px; line-height:1.2;
+    font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 800;
+    color: var(--cream); margin-bottom: 16px; line-height: 1.2;
   }
-  .p-big p { font-size:16px; color:rgba(255,253,243,.75); line-height:1.7; }
-  .p-big .p-kw { color:var(--gold); font-weight:600; }
-
-  /* ── VERTICAL LIST (slides 6, 7) ── */
-  .v-list { display:flex; flex-direction:column; gap:0; margin-top:24px; }
-  .v-item {
-    display:grid; grid-template-columns:60px 260px 1fr;
-    align-items:center; gap:20px;
-    padding:18px 0;
-    border-bottom:1px solid rgba(0,36,74,.08);
-  }
-  .v-item:last-child { border-bottom:none; }
-  .v-num {
-    font-family:'Sora',sans-serif; font-size:30px; font-weight:800;
-    color:var(--gold); line-height:1;
-  }
-  .v-title {
-    font-family:'Sora',sans-serif; font-size:16px; font-weight:700;
-    color:var(--navy);
-  }
-  .v-desc { font-size:13.5px; color:rgba(0,36,74,.60); line-height:1.55; }
-
-  /* ── ENTREGÁVEIS LIST (slide 7) ── */
-  .e-list { display:flex; flex-direction:column; gap:0; margin-top:24px; }
-  .e-row {
-    display:grid; grid-template-columns:240px 1fr;
-    align-items:center; gap:24px;
-    padding:16px 0;
-    border-bottom:1px solid rgba(0,36,74,.08);
-  }
-  .e-row:last-child { border-bottom:none; }
-  .e-left { display:flex; align-items:center; gap:14px; }
-  .e-n {
-    width:32px;height:32px; border-radius:50%;
-    background:var(--navy); color:var(--cream);
-    font-family:'Sora',sans-serif; font-size:12px; font-weight:700;
-    display:flex;align-items:center;justify-content:center;
-    flex-shrink:0;
-  }
-  .e-name { font-family:'Sora',sans-serif; font-size:14px; font-weight:700; color:var(--navy); }
-  .chips { display:flex; flex-wrap:wrap; gap:8px; }
-  .chip {
-    background:rgba(0,36,74,.07); border:1px solid rgba(0,36,74,.12);
-    border-radius:6px; padding:5px 12px;
-    font-size:12px; color:rgba(0,36,74,.70);
-  }
+  .p-big p { font-size: 16px; color: rgba(255,253,243,.75); line-height: 1.7; }
+  .p-big .p-kw { color: var(--gold); font-weight: 600; }
 
   /* ── PRICE TABLE ── */
-  .price-table { width:100%; margin-top:24px; border-collapse:collapse; }
-  .price-table tr { border-bottom:1px solid rgba(255,253,243,.08); }
-  .price-table tr:last-child { border-bottom:none; }
-  .price-table td { padding:13px 8px; font-size:14px; color:rgba(255,253,243,.62); }
-  .price-table td:first-child { color:var(--cream); }
-  .price-table td:last-child { text-align:right; font-family:'Sora',sans-serif; font-weight:600; color:var(--gold); white-space:nowrap; }
-  .price-total td { background:var(--gp); color:var(--cream)!important; font-weight:700!important; font-size:16px!important; }
-  .price-total td:first-child { border-radius:8px 0 0 8px; padding-left:16px; }
-  .price-total td:last-child  { border-radius:0 8px 8px 0; padding-right:16px; }
+  .price-table { width: 100%; margin-top: 24px; border-collapse: collapse; }
+  .price-table tr { border-bottom: 1px solid rgba(255,253,243,.08); }
+  .price-table tr:last-child { border-bottom: none; }
+  .price-table td { padding: 15px 8px; font-size: 14px; color: rgba(255,253,243,.62); }
+  .price-table td:first-child { color: var(--cream); }
+  .price-table td:last-child { text-align: right; font-family: 'Sora', sans-serif; font-weight: 600; color: var(--gold); white-space: nowrap; }
+  .price-total td { background: var(--gp); color: var(--cream) !important; font-weight: 700 !important; font-size: 16px !important; }
+  .price-total td:first-child { border-radius: 8px 0 0 8px; padding-left: 16px; }
+  .price-total td:last-child  { border-radius: 0 8px 8px 0; padding-right: 16px; }
 
   /* ── PARTNERSHIP ── */
-  .partner-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:28px; }
-  .p-box { background:rgba(255,253,243,.05); border:1px solid rgba(255,253,243,.10); border-radius:14px; padding:32px; }
-  .p-box.phi { background:var(--gp); border-color:var(--gold); }
-  .p-lbl { font-family:'Sora',sans-serif; font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
-  .p-val { font-family:'Sora',sans-serif; font-size:48px; font-weight:800; color:var(--cream); margin-bottom:10px; line-height:1; }
-  .p-desc { font-size:14px; color:rgba(255,253,243,.65); line-height:1.65; }
+  .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+  .p-box { background: rgba(255,253,243,.05); border: 1px solid rgba(255,253,243,.10); border-radius: 14px; padding: 36px; }
+  .p-box.phi { background: var(--gp); border-color: var(--gold); }
+  .p-lbl { font-family: 'Sora', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .p-val { font-family: 'Sora', sans-serif; font-size: 48px; font-weight: 800; color: var(--cream); margin-bottom: 10px; line-height: 1; }
+  .p-desc { font-size: 14px; color: rgba(255,253,243,.65); line-height: 1.65; }
 
-  /* ── EXCLUSIVIDADE ── */
+  /* ── BADGE ── */
   .badge-exc {
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--gp);border:1px solid var(--gold);
-    border-radius:100px;padding:9px 22px;
-    font-family:'Sora',sans-serif;font-size:12px;font-weight:700;
-    color:var(--gold);letter-spacing:1px;margin-bottom:32px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gp); border: 1px solid var(--gold);
+    border-radius: 100px; padding: 9px 22px;
+    font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 700;
+    color: var(--gold); letter-spacing: 1px; margin-bottom: 32px;
   }
 
   /* ── TIMELINE ── */
-  .timeline { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:36px; position:relative; }
-  .timeline::before { content:''; position:absolute; left:50%;top:0;bottom:0;width:2px; background:linear-gradient(to bottom,var(--gold),transparent); transform:translateX(-50%); }
-  .t-block { padding:0 12px; }
-  .t-period { font-family:'Sora',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
-  .t-block h3 { font-family:'Sora',sans-serif; font-size:20px; font-weight:700; color:var(--cream); margin-bottom:12px; }
-  .t-block p { font-size:14px; color:rgba(255,253,243,.65); line-height:1.7; }
+  .timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 36px; position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom,var(--gold),transparent); transform: translateX(-50%); }
+  .t-block { padding: 0 12px; }
+  .t-period { font-family: 'Sora', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .t-block h3 { font-family: 'Sora', sans-serif; font-size: 20px; font-weight: 700; color: var(--cream); margin-bottom: 12px; }
+  .t-block p { font-size: 14px; color: rgba(255,253,243,.65); line-height: 1.7; }
 
-  /* ── LOGO ── */
-  .logo-area { font-family:'Sora',sans-serif; font-size:12px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:36px; }
-  .logo-area span { color:rgba(255,253,243,.35); font-weight:400; }
-
-  /* ── NAV ── */
-  .nav {
-    position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
-    display:flex;align-items:center;gap:18px;z-index:100;
-    background:rgba(0,20,40,.75);backdrop-filter:blur(14px);
-    border:1px solid rgba(255,253,243,.10);border-radius:100px;padding:10px 22px;
+  /* ── SECTION DIVIDER ── */
+  .sec-divider {
+    width: 100%; max-width: 980px; margin: 0 auto;
+    border: none; border-top: 1px solid rgba(255,253,243,.08);
   }
-  .nav-btn { background:none;border:none;color:rgba(255,253,243,.45);cursor:pointer;font-size:18px;padding:4px 8px;transition:color .2s; }
-  .nav-btn:hover { color:var(--gold); }
-  .dots { display:flex;gap:6px;align-items:center; }
-  .dot { width:6px;height:6px;border-radius:50%;background:rgba(255,253,243,.22);cursor:pointer;transition:background .2s,width .2s; }
-  .dot.on { background:var(--gold);width:18px;border-radius:3px; }
-
-  /* ── FIXED UI ── */
-  .progress { position:fixed;top:0;left:0;height:2px;background:var(--gold);transition:width .4s ease;z-index:200; }
-  .slide-num { position:fixed;top:26px;left:32px;font-family:'Sora',sans-serif;font-size:11px;letter-spacing:2px;color:rgba(255,253,243,.22);z-index:100; }
-  .fs-btn { position:fixed;top:22px;right:28px;background:rgba(0,20,40,.60);border:1px solid rgba(255,253,243,.12);border-radius:8px;color:rgba(255,253,243,.45);cursor:pointer;padding:7px 13px;font-size:12px;font-family:'Sora',sans-serif;letter-spacing:1px;transition:color .2s;z-index:100; }
-  .fs-btn:hover { color:var(--gold); }
 
   /* ── MOBILE ── */
-  @media (max-width: 768px) {
-    .slide { padding: 48px 24px 100px; }
-    .fs-btn { display: none; }
-    .slide-num { font-size: 10px; top: 18px; left: 20px; }
-    h1 { font-size: clamp(26px, 7vw, 40px); }
-    h2 { font-size: clamp(18px, 5vw, 26px); }
+  @media (max-width: 900px) {
+    .navbar { padding: 0 28px; }
+    .nav-links { display: none; }
+    .sec { padding: 100px 28px 60px; }
+    .sec-hero { padding: 90px 28px 60px; }
 
-    /* forçar coluna única em todos os grids inline e classes */
-    .g2, .g3, .g4,
-    .cols-2, .cols-3,
-    .pillar-grid, .partner-grid,
-    .paradox-wrap, .paradox-left,
-    .timeline { display: flex !important; flex-direction: column !important; gap: 12px !important; }
+    h1 { font-size: clamp(26px,7vw,40px); }
+    h2 { font-size: clamp(18px,5vw,26px); }
+
+    .row-item { grid-template-columns: 1fr; gap: 4px; }
+    .row-tag { margin-bottom: 4px; }
+
+    .paradox-wrap,
+    .paradox-left,
+    .partner-grid,
+    .timeline { display: flex !important; flex-direction: column !important; gap: 14px !important; }
 
     .timeline::before { display: none; }
     .t-block { padding-left: 0 !important; }
 
-    /* tabela de preços */
-    .price-table td { font-size: 12px; padding: 10px 4px; }
-
-    /* nav dots menores */
-    .dot { width: 5px; height: 5px; }
-    .dot.on { width: 14px; }
-
-    /* p-big no paradoxo */
-    .p-big h3 { font-size: 20px; }
-    .p-big p  { font-size: 14px; }
-  }
-
-  @media (max-width: 768px) {
-    /* grids com style inline (slides de entregáveis, módulos, bônus) */
     [style*="grid-template-columns"] {
       display: flex !important;
       flex-direction: column !important;
@@ -314,36 +262,48 @@
       flex-direction: column !important;
       gap: 8px !important;
     }
-    /* remove divisores verticais inline */
     [style*="border-right"] { border-right: none !important; padding-right: 0 !important; }
     [style*="border-left:1px solid rgba(255"] { border-left: none !important; padding-left: 0 !important; }
     [style*="padding-left:20px"] { padding-left: 0 !important; }
     [style*="padding-left: 20px"] { padding-left: 0 !important; }
+
+    .price-table td { font-size: 12px; padding: 10px 4px; }
+    .p-big h3 { font-size: 20px; }
+    .p-big p  { font-size: 14px; }
+    .p-val { font-size: 36px !important; }
   }
 </style>
 </head>
 <body>
 
-<div class="progress" id="progress"></div>
-<div class="slide-num" id="slideNum">01 / 14</div>
-<button class="fs-btn" onclick="toggleFS()">⛶ Tela Cheia</button>
+<!-- ══ NAVBAR ══ -->
+<nav class="navbar">
+  <a href="#capa" class="nav-brand">LL'EXPERT <span>/ Proposta</span></a>
+  <ul class="nav-links">
+    <li><a href="#cenario">Contexto</a></li>
+    <li><a href="#solucao">Solução</a></li>
+    <li><a href="#mentoria">Mentoria</a></li>
+    <li><a href="#bonus">Bônus</a></li>
+    <li><a href="#proposta">Investimento</a></li>
+  </ul>
+</nav>
 
-<!-- ══ SLIDE 1: CAPA ══ -->
-<div class="slide dk active">
+<!-- ══ SEÇÃO 1: CAPA ══ -->
+<section id="capa" class="sec sec-hero dk">
   <div class="grid-lines"></div>
   <div class="blob blob-tl"></div>
   <div class="blob blob-br"></div>
-  <div style="text-align:center;position:relative;z-index:1;">
+  <div style="text-align:center;position:relative;z-index:1;max-width:780px;">
     <span class="label" style="display:block;text-align:center;">Proposta Confidencial</span>
     <h1>Projeto de Incubação<br><span class="gold">Estratégica</span></h1>
     <p class="subtitle" style="margin:0 auto;margin-top:16px;">IA para Políticos. Construindo a base tecnológica, estratégica e comercial para dominar o nicho de gestão pública.</p>
     <div class="div div-c"></div>
     <p style="font-size:13px;color:rgba(255,253,243,.38);letter-spacing:1px;">3 meses · Alta Performance · Parceria de Resultado</p>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 2: CENÁRIO MACRO — lista numerada, sem ícones ══ -->
-<div class="slide dk2">
+<!-- ══ SEÇÃO 2: CENÁRIO MACRO ══ -->
+<section id="cenario" class="sec dk2">
   <div class="blob blob-tl"></div>
   <div class="blob blob-tr"></div>
   <div class="content">
@@ -374,10 +334,10 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 3: DIAGNÓSTICO — lista horizontal scanável ══ -->
-<div class="slide lt">
+<!-- ══ SEÇÃO 3: DIAGNÓSTICO ══ -->
+<section id="diagnostico" class="sec lt">
   <div class="grid-lines"></div>
   <div class="blob blob-tl"></div>
   <div class="content">
@@ -407,10 +367,10 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 4: OBJETIVO — lista numerada, sem ícones ══ -->
-<div class="slide dk3">
+<!-- ══ SEÇÃO 4: OBJETIVO ══ -->
+<section id="objetivo" class="sec dk3">
   <div class="blob blob-tl"></div>
   <div class="blob blob-br"></div>
   <div class="content">
@@ -441,10 +401,10 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 5: PARADOXO — layout assimétrico, Nossa Via dominante ══ -->
-<div class="slide dk">
+<!-- ══ SEÇÃO 5: PARADOXO / SOLUÇÃO ══ -->
+<section id="solucao" class="sec dk">
   <div class="blob blob-br"></div>
   <div class="content">
     <span class="label">04 · Solução</span>
@@ -470,10 +430,10 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 6: OS 5 PILARES — fundo escuro, rows destacados ══ -->
-<div class="slide dk2">
+<!-- ══ SEÇÃO 6: OS 5 PILARES ══ -->
+<section id="pilares" class="sec dk2">
   <div class="blob blob-tl"></div>
   <div class="blob blob-br"></div>
   <div class="content">
@@ -514,10 +474,10 @@
 
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 7: ENTREGÁVEIS — 5 cards em grid ══ -->
-<div class="slide lt2">
+<!-- ══ SEÇÃO 7: ENTREGÁVEIS ══ -->
+<section id="entregaveis" class="sec lt2">
   <div class="grid-lines"></div>
   <div class="blob blob-tl"></div>
   <div class="content">
@@ -593,10 +553,10 @@
 
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 8A: GRADE MÓDULOS 1 e 2 ══ -->
-<div class="slide dk3">
+<!-- ══ SEÇÃO 8: GRADE DA MENTORIA (Módulos 1 e 2) ══ -->
+<section id="mentoria" class="sec dk3">
   <div class="blob blob-tl"></div>
   <div class="blob blob-br"></div>
   <div class="content">
@@ -655,45 +615,45 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- ══ SLIDE 8B: GRADE MÓDULO 3 ══ -->
-<div class="slide dk2">
-  <div class="blob blob-tl"></div>
-  <div class="blob blob-tr"></div>
-  <div class="content">
-    <span class="label">07 · Mentoria de Transferência</span>
-    <h2>Módulo 3: <span class="gold">Empacotamento e Negócios</span></h2>
-    <div class="div"></div>
-    <div style="display:flex;flex-direction:column;gap:12px;margin-top:18px;">
-
-      <div style="display:grid;grid-template-columns:200px 1fr;align-items:start;gap:0;background:rgba(255,253,243,.05);border:1px solid rgba(255,253,243,.10);border-left:3px solid var(--gold);border-radius:10px;padding:18px 24px;">
-        <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--gold);padding-right:20px;border-right:1px solid rgba(255,253,243,.10);">E7 · IA para Políticos</div>
-        <div style="font-size:13.5px;color:rgba(255,253,243,.60);line-height:1.55;padding-left:20px;">Aplicação das Skills criadas em casos reais: análise de eleitorado, redação de discursos hiper-segmentados e gestão de crises.</div>
+    <!-- Módulo 3 (continuação na mesma seção) -->
+    <div style="margin-top:32px;">
+      <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;">
+        <div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;color:var(--gold);line-height:1;">03</div>
+        <div>
+          <div style="font-family:'Sora',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(255,253,243,.50);margin-bottom:2px;">MÓDULO</div>
+          <div style="font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:var(--cream);">Empacotamento e Negócios</div>
+        </div>
       </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
 
-      <div style="display:grid;grid-template-columns:200px 1fr;align-items:start;gap:0;background:rgba(255,253,243,.05);border:1px solid rgba(255,253,243,.10);border-left:3px solid var(--gold);border-radius:10px;padding:18px 24px;">
-        <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--gold);padding-right:20px;border-right:1px solid rgba(255,253,243,.10);">E8 · Estruturação do Produto</div>
-        <div style="font-size:13.5px;color:rgba(255,253,243,.60);line-height:1.55;padding-left:20px;">Como empacotar o conhecimento técnico em uma Imersão Presencial e Mentoria que o político compre e pague bem.</div>
+        <div style="display:grid;grid-template-columns:200px 1fr;align-items:start;gap:0;background:rgba(255,253,243,.05);border:1px solid rgba(255,253,243,.10);border-left:3px solid var(--gold);border-radius:10px;padding:18px 24px;">
+          <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--gold);padding-right:20px;border-right:1px solid rgba(255,253,243,.10);">E7 · IA para Políticos</div>
+          <div style="font-size:13.5px;color:rgba(255,253,243,.60);line-height:1.55;padding-left:20px;">Aplicação das Skills criadas em casos reais: análise de eleitorado, redação de discursos hiper-segmentados e gestão de crises.</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:200px 1fr;align-items:start;gap:0;background:rgba(255,253,243,.05);border:1px solid rgba(255,253,243,.10);border-left:3px solid var(--gold);border-radius:10px;padding:18px 24px;">
+          <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--gold);padding-right:20px;border-right:1px solid rgba(255,253,243,.10);">E8 · Estruturação do Produto</div>
+          <div style="font-size:13.5px;color:rgba(255,253,243,.60);line-height:1.55;padding-left:20px;">Como empacotar o conhecimento técnico em uma Imersão Presencial e Mentoria que o político compre e pague bem.</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:200px 1fr;align-items:start;gap:0;background:rgba(255,253,243,.05);border:1px solid rgba(255,253,243,.10);border-left:3px solid var(--gold);border-radius:10px;padding:18px 24px;">
+          <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--gold);padding-right:20px;border-right:1px solid rgba(255,253,243,.10);">E9 · Domínio do Nexus 2.0</div>
+          <div style="font-size:13.5px;color:rgba(255,253,243,.60);line-height:1.55;padding-left:20px;">A tecnologia a favor da venda. Como usar o Nexus para gerenciar leads políticos, organizar o funil e escalar vendas.</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:200px 1fr;align-items:start;gap:0;background:rgba(196,154,27,.12);border:1px solid var(--gold);border-radius:10px;padding:18px 24px;">
+          <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--gold);padding-right:20px;border-right:1px solid rgba(196,154,27,.30);">E10 · Hot Seat — Prova Final</div>
+          <div style="font-size:13.5px;color:rgba(255,253,243,.75);line-height:1.55;padding-left:20px;">Você assume o controle: roda o Claude Code e apresenta uma oferta de venda simulando o atendimento a um político real. Validação total da didática.</div>
+        </div>
+
       </div>
-
-      <div style="display:grid;grid-template-columns:200px 1fr;align-items:start;gap:0;background:rgba(255,253,243,.05);border:1px solid rgba(255,253,243,.10);border-left:3px solid var(--gold);border-radius:10px;padding:18px 24px;">
-        <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--gold);padding-right:20px;border-right:1px solid rgba(255,253,243,.10);">E9 · Domínio do Nexus 2.0</div>
-        <div style="font-size:13.5px;color:rgba(255,253,243,.60);line-height:1.55;padding-left:20px;">A tecnologia a favor da venda. Como usar o Nexus para gerenciar leads políticos, organizar o funil e escalar vendas.</div>
-      </div>
-
-      <div style="display:grid;grid-template-columns:200px 1fr;align-items:start;gap:0;background:rgba(196,154,27,.12);border:1px solid var(--gold);border-radius:10px;padding:18px 24px;">
-        <div style="font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--gold);padding-right:20px;border-right:1px solid rgba(196,154,27,.30);">E10 · Hot Seat — Prova Final</div>
-        <div style="font-size:13.5px;color:rgba(255,253,243,.75);line-height:1.55;padding-left:20px;">Você assume o controle: roda o Claude Code e apresenta uma oferta de venda simulando o atendimento a um político real. Validação total da didática.</div>
-      </div>
-
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 9: BÔNUS ESPECIAL ══ -->
-<div class="slide lt">
+<!-- ══ SEÇÃO 9: BÔNUS ESPECIAL ══ -->
+<section id="bonus" class="sec lt">
   <div class="grid-lines"></div>
   <div class="blob blob-tl"></div>
   <div class="content">
@@ -737,10 +697,10 @@
 
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 10 (era 8): COMPROMETIMENTO ══ -->
-<div class="slide dk">
+<!-- ══ SEÇÃO 10: COMPROMETIMENTO ══ -->
+<section id="comprometimento" class="sec dk">
   <div class="dots-bg"></div>
   <div class="blob blob-tl"></div>
   <div class="blob blob-br"></div>
@@ -750,10 +710,10 @@
     <div class="div div-c"></div>
     <p class="subtitle" style="margin:0 auto;">Não implementarei esta mesma estrutura de negócios para nenhum outro concorrente no nicho político. Você não compra um serviço. Compra um parceiro com pele no jogo.</p>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 9: VALOR REAL ══ -->
-<div class="slide dk2">
+<!-- ══ SEÇÃO 11: VALOR REAL ══ -->
+<section id="valor" class="sec dk2">
   <div class="blob blob-br"></div>
   <div class="content">
     <span class="label">07 · Valor</span>
@@ -773,10 +733,10 @@
       </tr>
     </table>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 10: NOSSA PROPOSTA — % em aberto ══ -->
-<div class="slide dk3">
+<!-- ══ SEÇÃO 12: NOSSA PROPOSTA ══ -->
+<section id="proposta" class="sec dk3">
   <div class="blob blob-tl"></div>
   <div class="blob blob-tr"></div>
   <div class="content">
@@ -797,10 +757,10 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ SLIDE 11: HORIZONTE — sem botão ══ -->
-<div class="slide dk">
+<!-- ══ SEÇÃO 13: HORIZONTE ══ -->
+<section id="horizonte" class="sec dk">
   <div class="blob blob-tl"></div>
   <div class="blob blob-br"></div>
   <div class="content" style="text-align:center;">
@@ -820,54 +780,7 @@
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══ NAV ══ -->
-<div class="nav">
-  <button class="nav-btn" onclick="go(-1)">←</button>
-  <div class="dots" id="dots"></div>
-  <button class="nav-btn" onclick="go(1)">→</button>
-</div>
-
-<script>
-  const slides = Array.from(document.querySelectorAll('.slide'));
-  const dotsEl = document.getElementById('dots');
-  const prog   = document.getElementById('progress');
-  const numEl  = document.getElementById('slideNum');
-  let cur = 0;
-
-  slides.forEach((_,i) => {
-    const d = document.createElement('div');
-    d.className = 'dot' + (i===0?' on':'');
-    d.onclick = () => goTo(i);
-    dotsEl.appendChild(d);
-  });
-
-  function goTo(n) {
-    if (n<0||n>=slides.length) return;
-    slides[cur].classList.remove('active');
-    slides[cur].classList.add('exit');
-    setTimeout(()=>slides[cur].classList.remove('exit'),480);
-    cur=n;
-    slides[cur].classList.add('active');
-    dotsEl.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===cur));
-    prog.style.width=((cur+1)/slides.length*100)+'%';
-    numEl.textContent=String(cur+1).padStart(2,'0')+' / '+slides.length;
-  }
-  function go(d){goTo(cur+d);}
-
-  document.addEventListener('keydown',e=>{
-    if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();go(1);}
-    if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();go(-1);}
-    if(e.key==='Home')goTo(0);
-    if(e.key==='End')goTo(slides.length-1);
-    if(e.key.toLowerCase()==='f')toggleFS();
-  });
-  let tx=0;
-  document.addEventListener('touchstart',e=>tx=e.touches[0].clientX);
-  document.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX;if(Math.abs(dx)>50)go(dx>0?1:-1);});
-  function toggleFS(){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}
-  prog.style.width=(1/slides.length*100)+'%';
-</script>
 </body>
 </html>
